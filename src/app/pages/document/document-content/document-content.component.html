@@ -1,0 +1,94 @@
+<div class="mx-5 ">
+    <p class="text-2xl text-blue-500 mt-6 ml-11 font-bold">Documents</p>
+    <div class="flex items-center">
+        <input class="border rounded-2xl w-11/12 h-12 my-5 mr-2 relative" type="text" />
+        <img class="absolute text-base ml-5" src="../../../assets/icons/fluent_search-24-filled.png" alt="">
+        <p class="absolute font-normal ml-12">Search documents</p>
+        <span class="mr-2 text-base font-semibold">Sort by</span>
+        <img src="../../../assets/icons/mdi_chevron-down.png" alt="" class="mr-2">
+        <img src="../../../assets/icons/Filter.png" alt="">
+    </div>
+
+
+    <div class="flex justify-between">
+
+        <div class="flex">
+            <div class="h-12 w-12 bg-gray-100 relative border flex justify-center items-center mr-4 rounded">
+                <img class="absolute" src="../../../assets/icons/cnc-machine 1.png" alt="">
+            </div>
+            <div class="h-12 w-12 bg-gray-100 relative border flex justify-center items-center mr-4 rounded">
+                <img class="absolute" src="../../../assets/icons/fit-to-width 1.png" alt="">
+            </div>
+            <div class="h-12 w-12 bg-gray-100 relative border flex justify-center items-center mr-4 rounded">
+                <img class="absolute" src="../../../assets/icons/Vector (2).png" alt="">
+            </div>
+            <div class="h-12 w-12 bg-gray-100 relative border flex justify-center items-center mr-4 rounded">
+                <img class="absolute" src="../../../assets/icons/Vector (3).png" alt="">
+            </div>
+            <div class="h-12 w-12 bg-gray-100 relative border flex justify-center items-center mr-4 rounded">
+                <img class="absolute" src="../../../assets/icons/Vector (4).png" alt="">
+            </div>
+        </div>
+
+
+        <div class="flex">
+            <div class="border w-56 h-12 mx-1.5">
+                <div class="flex items-center  ">
+                    <p class="py-3 pl-3">This Month</p>
+                    <img src="../../../../assets/icons/mdi_chevron-down.png" alt="" class="ml-auto">
+                </div>
+            </div>
+            <div class="border w-56 h-12 mx-1.5">
+                <div class="flex items-center ">
+                    <p class="py-3 pl-3">Documents</p>
+                    <img src="../../../../assets/icons/mdi_chevron-down.png" alt="" class="ml-auto">
+                </div>
+
+            </div>
+
+            <button class="w-12 h-12 bg-blue-500 text-white text-2xl border rounded-md mx-1.5">+</button>
+        </div>
+
+    </div>
+
+    <div class="mt-7 rounded-md bg-white">
+        <p class="ml-7 text-base pt-4 font-semibold">List of documents</p>
+        <p class="ml-7 text-gray-400 text-xs">Lorem ipsum lorem uojohn</p>
+        <hr class="mt-5" />
+        @for (document of documents; track document) {
+        <div class="flex items-center">
+            <div
+                class="border rounded-md h-10 w-10 bg-gray-100 relative border flex justify-center items-center ml-7 mr-4 my-2.5">
+                <img class="absolute" src="../../../assets/icons/document-text.png" alt="">
+            </div>
+
+            <div class="ml-12 my-2.5">
+                <p class="text-base">{{document.name}}</p>
+                <p class="text-gray-600 text-sm">{{document.date}}</p>
+            </div>
+
+            <div class="ml-20 my-2.5 w-80 text-gray-600 mx-auto">
+                <p class="text-sm">{{document.description}}
+                </p>
+            </div>
+
+            <div class="flex">
+                <div
+                    class="border rounded-md h-10 w-10 bg-white relative border flex justify-center items-center my-2.5 mr-3.5 ">
+                    <img class="absolute" src="../../../assets/icons/edit 1.png" alt="">
+                </div>
+
+                <div
+                    class="border rounded-md h-10 w-10 bg-white relative border flex justify-center items-center my-2.5 mr-12">
+                    <img class="absolute" src="../../../assets/icons/delete 1.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        }
+
+    </div>
+
+
+</div>
