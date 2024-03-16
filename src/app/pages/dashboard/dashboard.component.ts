@@ -10,5 +10,17 @@ import { DashboardContentComponent } from './dashboard-content/dashboard-content
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-
+  handleBlur(blur: boolean) {
+    console.log(blur);
+    const flexElement = document.querySelector('#side-bar');
+    if (flexElement) {
+      if (blur === true) {
+        flexElement.classList.add('blurred');
+      } else {
+        flexElement.classList.remove('blurred');
+      }
+    }
+  }
+  
+  
 }
