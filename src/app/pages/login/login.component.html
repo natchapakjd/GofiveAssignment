@@ -1,0 +1,25 @@
+<div class="flex bg-gray-200 h-screen w-full">
+    <div class="flex justify-between w-full">
+        <div class="border w-1/2">
+
+        </div>
+        <div class="w-1/2">
+            <div class="flex bg-white  flex-col gap-3 h-full justify-center items-center">
+                <div  class="w-2/3">
+                    <label for="username" class="font-semibold text-xl ">Username(*)</label>
+                    <br/>
+                    <input id="username" type="text" class="border h-12  w-full rounded-xl" [(ngModel)]="username">
+                    <br/>
+
+                    <label for="password" class="font-semibold text-xl" >Password(*)</label>
+                    <br/>
+
+                    <input id="password" type="text" class="border h-12 w-full rounded-xl" [(ngModel)]="password">
+                    <br/>
+                    <button  class="bg-blue-500 w-full text-white rounded-xl h-12 text-xl mt-6" (click)="login()">Login</button>
+                </div  >
+            </div>
+
+        </div>
+    </div>
+</div>

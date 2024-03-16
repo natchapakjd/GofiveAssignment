@@ -1,18 +1,18 @@
 <div class="mx-5 ">
     <p class="text-2xl text-blue-500 mt-6 ml-11 font-bold">Users Dashboard</p>
     <div class="flex items-center">
-        <input class="border rounded-2xl w-8/12 h-12 my-5 mr-2 relative" type="text" />
+        <input class="border rounded-2xl w-8/12 h-12 my-5 mr-2 relative" type="text" [(ngModel)]="searchText"/>        
         <img class="absolute text-base ml-5" src="../../../assets/icons/fluent_search-24-filled.png" alt="">
         <p class="absolute font-normal ml-12">Search</p>
 
 
         <button class="w-36 h-12 bg-blue-500 text-white text-base border font-semibold rounded-md ml-7 mr-8"
             (click)="addUserToggle()">Add user +</button>
-        <div class="flex mr-5">
+        <div class="flex mr-5" (click)="sortUsersByFirstName()">
             <span class="mr-2 text-base font-semibold">Sort by</span>
             <img src="../../../assets/icons/mdi_chevron-down.png" alt="" class="mr-2">
         </div>
-        <div class="flex">
+        <div class="flex" (click)="saveSearch()">
             <span class="mr-2 text-base font-semibold">Saved search</span>
             <img src="../../../assets/icons/mdi_chevron-down.png" alt="" class="mr-2">
         </div>
@@ -121,7 +121,7 @@
 
 
     <div class="mt-7 rounded-md bg-white">
-        <p class="ml-7 text-base pt-4 font-semibold">List Users</p>
+        <p class="ml-7 text-base pt-4 font-semibold mb-5">List Users</p>
         <div class="bg-gray-200  flex justify-between h-16 items-center">
             <p class="ml-8 mr-96 text-gray-600">Name</p>
             <p class="text-gray-600">Create date</p>
@@ -133,7 +133,7 @@
 
     </div>
 
-    @for(user of users;track user){
+    @for(user of users;track user ){
     <div class="bg-white  flex h-20">
         <div class="flex justify-between   w-1/2 my-auto">
             <div class="w-2/3">

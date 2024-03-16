@@ -8,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  username: string = ''
+  password: string = ''
+  role :string =''
+  firstName :string = ''
+  lastName :string = ''
+
+  ngOnInit(): void {
+
+    this.username = localStorage.getItem("username") || '';
+    this.password = localStorage.getItem("password") || '';
+    this.role = localStorage.getItem("role") || '';
+    this.firstName = localStorage.getItem("firstName") || '';
+    this.lastName = localStorage.getItem("lastName") || '';
+  }
 
 }
