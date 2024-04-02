@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { User } from '../models/user.model';
 import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-dashboard-content',
@@ -15,7 +16,7 @@ export class DashboardContentComponent {
   searchText: string = '';
   // @Output() isBlur  = new EventEmitter();
 
-  users = [
+  users :User[] = [
     { firstName: "David", lastName: "Wagner", email: "david_wagner@example.com", role: "Super Admin", createdDate: "24 Otc, 2015" },
     { firstName: "Ina", lastName: "Hogan", email: "windler.warren@runte.net", role: "Admin", createdDate: "24 Otc, 2015" },
     { firstName: "Devin", lastName: "Harmon", email: "wintheiser_enos@yahoo.com", role: "HR Admin", createdDate: "18 Dec, 2015" },
