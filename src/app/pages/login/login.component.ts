@@ -13,12 +13,16 @@ export class LoginComponent {
   
 
   login(){
+    if(this.username && this.password){
+      localStorage.setItem("username",this.username)
+      localStorage.setItem("password",this.password)
+      localStorage.setItem("role","Admin")
+      localStorage.setItem("firstName","Lekan")
+      localStorage.setItem("lastName","Okeowo")
+      window.location.href = "dashboard"
+    }else{
+      alert("username or password is null")
+    }
     
-    localStorage.setItem("username",this.username)
-    localStorage.setItem("password",this.password)
-    localStorage.setItem("role","Admin")
-    localStorage.setItem("firstName","Lekan")
-    localStorage.setItem("lastName","Okeowo")
-    window.location.href = "document"
   }
 }

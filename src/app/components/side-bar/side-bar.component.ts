@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-side-bar',
@@ -10,4 +10,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class SideBarComponent {
 
+  constructor(private router: Router){
+
+  }
+  isActive(url: string): boolean {
+    return this.router.isActive(url, true);
+}
 }
