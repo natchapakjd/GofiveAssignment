@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 export class DashboardContentComponent {
 
   toggle: boolean = false;
+  delToggle :boolean = false;
+  editToggle :boolean =false;
   searchText: string = '';
   // @Output() isBlur  = new EventEmitter();
 
@@ -37,6 +39,14 @@ export class DashboardContentComponent {
     // this.isBlur.emit(this.toggle)
   }
 
+  addDeleteToggle(){
+    this.delToggle = !this.delToggle
+  }
+
+  addEditToggle(){
+    this.editToggle = !this.editToggle
+
+  }
   saveSearch() {
     localStorage.setItem("searchQuery", ".......")
   }

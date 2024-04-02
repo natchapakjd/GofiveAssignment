@@ -5,5 +5,5 @@ import { LoginComponent } from './pages/login/login.component';
 export const routes: Routes = [
     {path:"document",component:DocumentComponent},
     {path:"dashboard",component:DashboardComponent},
-    {path:"login",component:LoginComponent}
+    {path:"",component:LoginComponent}
 ];

@@ -117,8 +117,125 @@
 
     }
 
-
-
+    @if (delToggle === true) {
+        <div class="container flex justify-center ">
+            <div class="block fixed mx-auto bg-white rounded-md w-1/4 h-1/4 pt-5 top-30 overflow-hidden  ">
+                <div class="flex justify-between w-full mb-5 ">
+                    <div class="mx-5 font-semibold">
+                        <p class="text-2xl my-2">Delete this account ?</p>
+                        <p class="font-normal my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel animi sed et dicta at ut ipsam laborum deserunt fuga, placeat quasi, perspiciatis nesciunt? Ipsa quisquam molestias, ut dolorum consequatur et.</p>
+                        <div class="flex gap-5 justify-end	"> 
+                            <button class="bg-red-500 text-white w-24 h-7 rounded-md">Yes, Delete</button>
+                            <button class=" text-gray-600 w-24 h-7 rounded-md bg-gray-100" (click) = "addDeleteToggle()">Cancel</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+               
+    
+            </div>
+        </div>
+    
+        }
+    
+        @if (editToggle === true) {
+            <div class="container flex justify-center ">
+                <div class="block fixed mx-auto bg-white rounded-md w-9/12 pt-5 top-28 overflow-hidden  ">
+                    <div class="flex justify-between w-full mb-5 ">
+                        <div class="w-1/2 ml-5 font-semibold">
+                            <p>Edit User</p>
+                        </div>
+                        <div class="w-1/2 mr-5">
+                            <img src="../../../../assets/icons/alert-circle.png" alt="" class="ml-auto "
+                                (click)="addEditToggle()">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mx-5">
+                        <input type="text" class="mt-5 mb-3 border w-full  h-8 rounded-md" placeholder="User ID *">
+                        <div class="flex justify-between gap-5 my-3">
+                            <input type="text" class=" border w-full  h-8 rounded-md" placeholder="First Name *">
+                            <input type="text" class=" border w-full  h-8 rounded-md" placeholder="Last Name *">
+                        </div>
+                        <div class="flex justify-between gap-5">
+                            <input type="text" class="my-3 border w-full  h-8 rounded-md" placeholder="Email ID *">
+                            <input type="text" class="my-3 border w-full  h-8 rounded-md" placeholder="Mobile No">
+                            <select name="" id="" class="my-3 border w-full  h-8 rounded-md" >
+                                <option value="">Super Admin</option>
+                                <option value="">Admin</option>
+                                <option value="">Hr Admin</option>
+                                <option value="">Employee</option>
+                            </select>
+        
+                        </div>
+        
+                        <div class="flex justify-between gap-5">
+                            <input type="text" class="my-3 border w-full  h-8 rounded-md" placeholder="Username *">
+                            <input type="text" class="my-3 border w-full  h-8 rounded-md" placeholder="Password*">
+                            <input type="text" class="mt-3 border w-full  h-8 rounded-md" placeholder="Confirm Password*">
+                        </div>
+        
+                    </div>
+                    <div class="flex justify-between h-16 bg-gray-200 mt-9 items-center">
+                        <div class="font font-semibold text-gray-500 w-1/2 ml-7">Module Permission</div>
+                        <div class="flex  justify-between  font-semibold text-gray-500  w-1/2 mr-36">
+                            <p>Read</p>
+                            <p>Write</p>
+                            <p>Delete</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-between h-16 bg-white  items-center">
+                        <div class="font font-semibold text-gray-500 w-1/2 ml-7">Super Admin</div>
+                        <div class="flex  justify-between   font-semibold text-gray-500  w-1/2 mr-36">
+                            <input type="checkbox" class="h-4 w-4 ml-2">
+                            <input type="checkbox" class="h-4 w-4">
+                            <input type="checkbox" class="h-4 w-4 mr-2">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex justify-between h-16 bg-white  items-center">
+                        <div class="font font-semibold text-gray-500 w-1/2 ml-7">Admin</div>
+                        <div class="flex  justify-between   font-semibold text-gray-500  w-1/2 mr-36">
+                            <input type="checkbox" class="h-4 w-4 ml-2">
+                            <input type="checkbox" class="h-4 w-4">
+                            <input type="checkbox" class="h-4 w-4 mr-2">
+                        </div>
+                    </div>
+                    <hr>
+        
+                    <div class="flex justify-between h-16 bg-white  items-center">
+                        <div class="font font-semibold text-gray-500 w-1/2 ml-7">Employee</div>
+                        <div class="flex  justify-between   font-semibold text-gray-500  w-1/2 mr-36">
+                            <input type="checkbox" class="h-4 w-4 ml-2">
+                            <input type="checkbox" class="h-4 w-4">
+                            <input type="checkbox" class="h-4 w-4 mr-2">
+                        </div>
+                    </div>
+                    <hr>
+        
+                    <div class="flex justify-between h-16 bg-white  items-center">
+                        <div class="font font-semibold text-gray-500 w-1/2 ml-7">Lorem ipsum</div>
+                        <div class="flex  justify-between   font-semibold text-gray-500  w-1/2 mr-36">
+                            <input type="checkbox" class="h-4 w-4 ml-2">
+                            <input type="checkbox" class="h-4 w-4">
+                            <input type="checkbox" class="h-4 w-4 mr-2">
+                        </div>
+                    </div>
+                    <hr>
+        
+                    <div class="flex flex-row-reverse gap-5 h-16 mx-5 my-auto py-5">
+                        <p class="text-gray-200">Cancel</p>
+                        <button class="bg-blue-500 w-24 h-7 text-white font-semibold rounded-xl">Add user</button>
+        
+                    </div>
+        
+        
+                </div>
+            </div>
+        
+            }
+   
 
     <div class="mt-7 rounded-md bg-white">
         <p class="ml-7 text-base pt-4 font-semibold mb-5">List Users</p>
@@ -155,8 +272,8 @@
             <p class="ml-20">{{user.createdDate}}</p>
             <p class="ml-7">Lorem ipsum</p>
             <div class="flex gap-5">
-                <img src="../../../../assets/icons/pen.png" alt="" class="w-5 h-5 ">
-                <img src="../../../../assets/icons/arrow-circle-down Copy.png" alt="" class="w-5 h-5 mr-6">
+                <img src="../../../../assets/icons/pen.png" alt="" class="w-5 h-5 " (click)="addEditToggle()">
+                <img src="../../../../assets/icons/arrow-circle-down Copy.png" alt="" class="w-5 h-5 mr-6" (click)="addDeleteToggle()">
             </div>
         </div>
 
@@ -164,6 +281,7 @@
     </div>
     <hr>
     }
+   
     <div class="flex w-96 mx-auto justify-center mt-14 mb-7">
         <div class="flex gap-7">
             <p class="text-gray-500">Items per page: </p>
