@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
+import { Role } from '../models/role.model';
+import { Permission } from '../models/permission.model';
 @Component({
   selector: 'app-dashboard-content',
   standalone: true,
@@ -31,10 +33,8 @@ export class DashboardContentComponent implements OnDestroy,OnInit{
   formatDate(dateString: string) : string{
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     
-    // แยกวันที่และเวลาออกจากกัน
     const parts = dateString.split('T');
     
-    // แยกวันที่เป็นส่วนเดียวกัน กับ แยกวันที่ เดือน และปี
     const dateParts = parts[0].split('-');
     const day = dateParts[2];
     const monthIndex = parseInt(dateParts[1]) - 1;
@@ -50,18 +50,38 @@ export class DashboardContentComponent implements OnDestroy,OnInit{
       this.users[i].createdDate = this.formatDate(this.users[i].createdDate)
     }
   }
-  ngOnInit(): void {
-    this.userService.getAllUsers().subscribe({
-      next:(response =>{
-        this.users =  response
-        console.log(this.users)
-        this.setFormatDateToArray();
 
+  getAllUsers(){ this.userService.getAllUsers().subscribe({
+    next:(response =>{
+      this.users =  response
+      console.log(this.users)
+      this.setFormatDateToArray();
+
+    })
+  })}
+  getAllRoles(){
+    this.userService.getAllRoles().subscribe({
+      next:(response =>{
+        this.roles =  response
+        console.log(this.roles)
+  
       })
     })
+  }
 
-    
-    
+  getAllPermissions(){
+    this.userService.getAllPermissions().subscribe({
+      next:(response =>{
+        this.permissions =  response
+        console.log(this.permissions)
+  
+      })
+    })
+  }
+  ngOnInit(): void {
+    this.getAllUsers()
+    this.getAllRoles()
+    this.getAllPermissions()
   }
   setId(id : string){
     this.id = id
@@ -79,6 +99,8 @@ export class DashboardContentComponent implements OnDestroy,OnInit{
       })
     }
   }
+  permissions :Permission[] =[]
+  roles : Role[] = []
   users :User[]= []
  
   addUserToggle() {

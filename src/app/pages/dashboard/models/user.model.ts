@@ -6,5 +6,7 @@ export interface User{
     email : string;
     roleId : string;
     createdDate : string;
-    
+    phone : string;
+    userName : string
+    password : string
 }
