@@ -13,21 +13,20 @@ import { User } from '../models/user.model';
 })
 
 
-export class DashboardContentComponent{
-
+export class DashboardContentComponent implements OnDestroy,OnInit{
+  id : string = '';
   toggle: boolean = false;
   delToggle :boolean = false;
   editToggle :boolean =false;
   searchText: string = '';
-  
-  id :string | null = null;
   paramsSubscription?: Subscription;
-  // @Output() isBlur  = new EventEmitter();
 
 
-  constructor(private userService:UserService,private router:Router){
+  constructor(private userService:UserService,private router:Router,private route:ActivatedRoute,){
   }
- 
+  ngOnDestroy(): void {
+    this.paramsSubscription?.unsubscribe();
+  }
   
   formatDate(dateString: string) : string{
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -60,20 +59,28 @@ export class DashboardContentComponent{
 
       })
     })
+
     
     
   }
+  setId(id : string){
+    this.id = id
+  }
+  addUser(){
+    
+  }
+  onDelete(): void{
+    if(this.id){
+      this.userService.deleteUser(this.id).subscribe({
+        next:(response)=>{
+          window.location.href ='/dashboard'
 
+        }
+      })
+    }
+  }
   users :User[]= []
-  //  filteredUsers() {
-  //   return this.users.filter(user => {
-  //     return user.firstName.toLowerCase().includes(this.searchText.toLowerCase()) ||
-  //       user.lastName.toLowerCase().includes(this.searchText.toLowerCase()) ||
-  //       user.email.toLowerCase().includes(this.searchText.toLowerCase()) ||
-  //       user.role.toLowerCase().includes(this.searchText.toLowerCase()) ||
-  //       user.createdDate.toLowerCase().includes(this.searchText.toLowerCase());
-  //   });
-  // }
+ 
   addUserToggle() {
     this.toggle = !this.toggle;
     // this.isBlur.emit(this.toggle)
@@ -110,18 +117,4 @@ export class DashboardContentComponent{
     });
   }
 
-  // sortUsersByRole() {
-  //   this.users.sort((a, b) => {
-  //     return a.role.localeCompare(b.role);
-  //   });
-  // }
-
-  // sortUsersByCreatedDate() {
-  //   this.users.sort((a, b) => {
-  //     // Assuming date format is consistent, you may need to parse the date string to compare properly
-  //     const dateA = new Date(a.createdDate);
-  //     const dateB = new Date(b.createdDate);
-  //     return dateA.getTime() - dateB.getTime();
-  //   });
-  // }
 }

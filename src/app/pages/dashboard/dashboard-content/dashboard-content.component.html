@@ -125,7 +125,7 @@
                         <p class="text-2xl my-2">Delete this account ?</p>
                         <p class="font-normal my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel animi sed et dicta at ut ipsam laborum deserunt fuga, placeat quasi, perspiciatis nesciunt? Ipsa quisquam molestias, ut dolorum consequatur et.</p>
                         <div class="flex gap-5 justify-end	"> 
-                            <button class="bg-red-500 text-white w-24 h-7 rounded-md">Yes, Delete</button>
+                            <button class="bg-red-500 text-white w-24 h-7 rounded-md" (click)="onDelete()">Yes, Delete</button>
                             <button class=" text-gray-600 w-24 h-7 rounded-md bg-gray-100" (click) = "addDeleteToggle()">Cancel</button>
                         </div>
                     </div>
@@ -282,7 +282,8 @@
             <p class="ml-7">Lorem ipsum</p>
             <div class="flex gap-5">
                 <img src="../../../../assets/icons/pen.png" alt="" class="w-5 h-5 " (click)="addEditToggle()">
-                <img src="../../../../assets/icons/arrow-circle-down Copy.png" alt="" class="w-5 h-5 mr-6" (click)="addDeleteToggle()">
+                <img src="../../../../assets/icons/arrow-circle-down Copy.png" alt="" class="w-5 h-5 mr-6" (click)="addDeleteToggle()" (click)="setId(user.id)
+                ">
             </div>
         </div>
 
