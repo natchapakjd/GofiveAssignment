@@ -1,5 +1,4 @@
-export interface AddUserRequest{
-    id :string
+export interface EditUserRequest{
     firstName : string;
     lastName : string;
     email : string;
